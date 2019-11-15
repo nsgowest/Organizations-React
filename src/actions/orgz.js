@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import {
   GET_ORGZ_REQUEST,
-  GET_ORGZ_SUCCESS,
+  ADD_ORG,
   DELETE_ORG,
 } from '../constants/actions';
 
@@ -11,3 +11,11 @@ export const deleteOrg = () => (
   }
 );
 
+export const addOrg = (suggestion) => (
+  {
+    type: ADD_ORG,
+    payload: {
+      orgz: suggestion,
+    },
+  }
+);

@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import {
   GET_ORGZ_REQUEST,
-  GET_ORGZ_SUCCESS,
+  ADD_ORG,
   DELETE_ORG,
 } from '../constants/actions';
 
@@ -18,7 +18,7 @@ export function orgzReducer(state = initialState, action) {
         error: '',
       };
 
-    case GET_ORGZ_SUCCESS:
+    case ADD_ORG:
       return {
         ...state,
         orgz: [...state.orgz, action.payload.orgz].flat(),

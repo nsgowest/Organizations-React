@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DadataSuggestions from 'react-dadata-suggestions';
+import { addOrg } from './actions/orgz';
+
 import 'react-dadata-suggestions/dist/styles.css';
 
 const token = '68f82416ea144e2a2367805e78ca514040ca42c7';
@@ -16,6 +18,8 @@ class SearchTab extends Component {
 
   handleSelect = (suggestion) => {
 
+    this.props.saveOrg(suggestion)
+    console.log('suggestion', suggestion)
   }
 
   // handleChange = (query) => {
@@ -29,7 +33,6 @@ class SearchTab extends Component {
         <DadataSuggestions
           token={token}
           onSelect={(suggestion) => this.handleSelect(suggestion)}
-          onChange={(query) => this.handleChange(query)}
           placeholder="Введите название, ИНН или адрес организации"
           hint=""
           highlighting={false}
@@ -50,4 +53,10 @@ class SearchTab extends Component {
   }
 }
 
-export default SearchTab;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    saveOrg: (suggestion) => dispatch(addOrg(suggestion)),
+  }
+}
+
+export default connect(null, mapDispatchToProps)(SearchTab);
