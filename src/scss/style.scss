@@ -31,8 +31,8 @@ main {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  p {
-    font-family: Verdana;
+  font-family: Verdana;
+  > p {
     font-style: normal;
     font-weight: bold;
     font-size: 40px;
@@ -53,9 +53,11 @@ main {
   label {
     display: inline-block;
     margin: 0 0 -1px;
-    padding: 15px 25px;
-    font-weight: 600;
+    padding: 11px 24px;
+    font-weight: bold;
     text-align: center;
+    font-size: 12px;
+    line-height: 18px;
     color: #b9b9b9;
   }
   label:hover {
@@ -63,9 +65,8 @@ main {
     cursor: pointer;
   }
   input:checked + label {
-    color: #555;
+    color: #2b2829;
     border-top: 2px solid #f50634;
-    border-bottom: 1px solid #fff;
     background: #fff;
   }
   > div {
@@ -73,6 +74,7 @@ main {
     width: 736px;
     height: 450px;
     padding: 25px;
+    padding-top: 32px;
     background: #fff;
   }
 }
@@ -89,19 +91,36 @@ main {
     border-radius: 3px;
     width: 688px;
     height: 46px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 26px;
+    margin-top: 5px;
+  }
+  > p {
+    font-size: 14px;
+    line-height: 26px;
   }
 }
 
 .addWrapper {
+  display: flex;
   width: 500px;
   height: 70px;
+  margin-top: 48px;
+  align-items: center;
   span {
     width: 315px;
-    font-family: Verdana;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 20px;
     color: #777777;
+  }
+  .addIcon {
+    width: 68px;
+    height: 68px;
+    background: url(../img/addIcon.svg);
+    margin-right: 32px;
   }
 }

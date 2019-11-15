@@ -3,6 +3,7 @@ import React from 'react';
 function SearchTab() {
   return (
     <div className="searchTab">
+      <p>Организация или ИП</p>
       <input type="text" placeholder="Введите название, ИНН или адрес организации" />
 
       <div className="addWrapper">
