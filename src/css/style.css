@@ -98,7 +98,7 @@ main > p {
 }
 .searchTab input:focus {
   outline: none;
-  border: 1px solid #FAE29F;
+  border: 1px solid #fae29f;
   border-radius: 3px;
 }
 .searchTab > p {
@@ -152,4 +152,40 @@ main > p {
   font-weight: bold;
   font-size: 14px;
   line-height: 20px;
+}
+
+.orgWrapper {
+  width: 688px;
+  height: 300px;
+}
+.orgWrapper .orgName {
+  border-bottom: 1px solid #dfdfdf;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 45px;
+  color: #2b2829;
+  margin-top: 40px;
+}
+.orgWrapper .infoWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+.orgWrapper .infoWrapper .numbers {
+  display: inline-flex;
+  flex-direction: column;
+  width: 208px;
+  height: 125px;
+  background: #f8f8f8;
+  border-radius: 3px;
+  padding: 24px;
+}
+.orgWrapper .infoWrapper .numbers span {
+  font-size: 14px;
+  line-height: 26px;
+}
+.orgWrapper .infoWrapper .texts {
+  display: inline-flex;
+  flex-direction: column;
 }

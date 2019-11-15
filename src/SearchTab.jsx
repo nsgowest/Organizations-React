@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DadataSuggestions from 'react-dadata-suggestions';
 import { addOrg } from './actions/orgz';
+import Organization from './Organization';
 
 import 'react-dadata-suggestions/dist/styles.css';
 
@@ -17,9 +18,11 @@ class SearchTab extends Component {
   }
 
   handleSelect = (suggestion) => {
-
-    this.props.saveOrg(suggestion)
-    console.log('suggestion', suggestion)
+    this.setState({
+      suggestion,
+    })
+    console.log(this.state.suggestion)
+    // this.props.saveOrg(suggestion)
   }
 
   // handleChange = (query) => {
@@ -44,10 +47,14 @@ class SearchTab extends Component {
         }
         />
         
-        <div className="addWrapper">
-          <div className="addIcon" />
-          <span>Для добавления новой организации введите ее название, ИНН или адрес.</span>
-        </div>
+        {(this.state.suggestion === null)
+        ? <div className="addWrapper">
+            <div className="addIcon" />
+            <span>Для добавления новой организации введите ее название, ИНН или адрес.</span>
+          </div>
+        : <Organization orgData={this.state.suggestion} />}
+
+        
       </div>
     );
   }
