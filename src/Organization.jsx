@@ -13,8 +13,8 @@ function Organization({ orgData, saveOrg }) {
         <div className="texts">
           <span className="title">Юридический адрес</span>
           <span>{orgData.data.address.value}</span>
-          <span className="title"></span>
-          <span></span>
+          <span className="title">Генеральный директор</span>
+          <span>{orgData.data.management.name}</span>
         </div>
         <div className="numbers">
           <span>ИНН {orgData.data.inn}</span>
@@ -22,7 +22,7 @@ function Organization({ orgData, saveOrg }) {
           <span>ОГРН {orgData.data.ogrn}</span>
         </div>
       </div>
-      <button type="button" onClick={() => saveOrg(orgData)}>Сохранить</button>
+      <button type="button" className="saveButton" onClick={() => saveOrg(orgData)}>Сохранить</button>
     </div>
   );
 }

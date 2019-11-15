@@ -45,7 +45,8 @@ main > p {
 
 .tabs {
   width: 736px;
-  height: 450px;
+  height: 568px;
+  margin-bottom: 200px;
 }
 .tabs > input {
   display: none;
@@ -73,7 +74,7 @@ main > p {
 .tabs > div {
   display: none;
   width: 736px;
-  height: 450px;
+  height: 568px;
   padding: 25px;
   padding-top: 32px;
   background: #fff;
@@ -188,4 +189,34 @@ main > p {
 .orgWrapper .infoWrapper .texts {
   display: inline-flex;
   flex-direction: column;
+}
+.orgWrapper .infoWrapper .texts span.title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 26px;
+  color: #2b2829;
+  margin-bottom: 8px;
+}
+.orgWrapper .infoWrapper .texts span {
+  margin-bottom: 24px;
+}
+.orgWrapper .saveButton {
+  background: #f50634;
+  border-radius: 3px;
+  width: 186px;
+  height: 46px;
+  border: none;
+  font-family: Verdana;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  color: #ffffff;
+  outline: none;
+}
+.orgWrapper .saveButton:hover {
+  cursor: pointer;
+  background: #971932f5;
 }
