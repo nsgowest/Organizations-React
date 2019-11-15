@@ -21,10 +21,13 @@ class SearchTab extends Component {
           token={token}
           onSelect={(suggestion) => console.log(suggestion)}
           placeholder="Введите название, ИНН или адрес организации"
+          hint=""
           service="party"
-          
-          selectedSuggestionFormatter={(suggestion) => `${suggestion.data.name.full}`}
-          onError={(error) => alert(error.message)}
+          suggestionsFormatter={(suggestion) =>
+            `${suggestion.value} г. ${suggestion.data.address.data.city}`}
+          selectedSuggestionFormatter={(suggestion) =>
+            `${suggestion.data.name.full_with_opf} ИНН ${suggestion.data.inn} адрес ${suggestion.data.address.value}`
+        }
         />
         <div className="addWrapper">
           <div className="addIcon" />

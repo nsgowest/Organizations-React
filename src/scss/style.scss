@@ -124,3 +124,18 @@ main {
     margin-right: 32px;
   }
 }
+
+// .suggestions-highlighting {
+//   background: chocolate;
+// }
+
+.suggestions-suggestions {
+  border: 1px solid #E5E5E5;
+  border-radius: 0px 0px 3px 3px;
+}
+
+.suggestions-suggestion {
+  &:hover {
+    background: #F8F8F8;
+  }
+}
