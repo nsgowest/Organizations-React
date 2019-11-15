@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import DadataSuggestions from 'react-dadata-suggestions';
 import 'react-dadata-suggestions/dist/styles.css';
 
@@ -9,9 +10,17 @@ class SearchTab extends Component {
     super(props);
 
     this.state = {
-      query: '',
+      suggestion: null,
     };
   }
+
+  handleSelect = (suggestion) => {
+
+  }
+
+  // handleChange = (query) => {
+    
+  // }
 
   render() {
     return (
@@ -19,9 +28,11 @@ class SearchTab extends Component {
         <p>Организация или ИП</p>
         <DadataSuggestions
           token={token}
-          onSelect={(suggestion) => console.log(suggestion)}
+          onSelect={(suggestion) => this.handleSelect(suggestion)}
+          onChange={(query) => this.handleChange(query)}
           placeholder="Введите название, ИНН или адрес организации"
           hint=""
+          highlighting={false}
           service="party"
           suggestionsFormatter={(suggestion) =>
             `${suggestion.value} г. ${suggestion.data.address.data.city}`}
@@ -29,6 +40,7 @@ class SearchTab extends Component {
             `${suggestion.data.name.full_with_opf} ИНН ${suggestion.data.inn} адрес ${suggestion.data.address.value}`
         }
         />
+        
         <div className="addWrapper">
           <div className="addIcon" />
           <span>Для добавления новой организации введите ее название, ИНН или адрес.</span>

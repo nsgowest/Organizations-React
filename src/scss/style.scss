@@ -96,6 +96,11 @@ main {
     font-size: 14px;
     line-height: 26px;
     margin-top: 5px;
+      &:focus {
+        outline:none; 
+        border: 1px solid #FAE29F;
+        border-radius: 3px;
+      }
   }
   > p {
     font-size: 14px;
@@ -130,12 +135,29 @@ main {
 // }
 
 .suggestions-suggestions {
-  border: 1px solid #E5E5E5;
+  border: 1px solid #e5e5e5;
   border-radius: 0px 0px 3px 3px;
 }
 
 .suggestions-suggestion {
   &:hover {
-    background: #F8F8F8;
+    background: #f8f8f8;
   }
+}
+
+.suggestions-subtext {
+  font-family: Verdana;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 17px;
+  color: #2b292a;
+}
+
+.suggestions-value {
+  font-family: Verdana;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
 }
