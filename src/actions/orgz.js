@@ -15,6 +15,7 @@ export const addOrg = (suggestion) => (
     type: ADD_ORG,
     payload: {
       orgz: suggestion,
+      canShowList: true,
     },
   }
 );

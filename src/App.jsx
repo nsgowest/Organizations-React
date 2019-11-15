@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchTab from './SearchTab';
+import SavedOrganizations from './SavedOrganizations';
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
           </div>
 
           <div id="content-tab2">
-
+            <SavedOrganizations />
           </div>
         </div>
       </main>

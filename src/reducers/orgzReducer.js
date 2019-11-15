@@ -6,6 +6,7 @@ import {
 
 const initialState = {
   orgz: [],
+  canShowList: false,
 };
 
 export function orgzReducer(state = initialState, action) {
@@ -14,6 +15,7 @@ export function orgzReducer(state = initialState, action) {
       return {
         ...state,
         orgz: [...state.orgz, action.payload.orgz].flat(),
+        canShowList: action.payload.canShowList,
       };
 
     case DELETE_ORG:

@@ -21,13 +21,7 @@ class SearchTab extends Component {
     this.setState({
       suggestion,
     })
-    console.log(this.state.suggestion)
-    // this.props.saveOrg(suggestion)
   }
-
-  // handleChange = (query) => {
-    
-  // }
 
   render() {
     return (

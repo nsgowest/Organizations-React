@@ -237,3 +237,8 @@ main > p {
   height: 13px;
   margin-right: 8px;
 }
+
+.savedWrapper {
+  height: 200px;
+  background: blanchedalmond;
+}
