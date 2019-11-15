@@ -1,6 +1,5 @@
 /* eslint-disable import/prefer-default-export */
 import {
-  GET_ORGZ_REQUEST,
   ADD_ORG,
   DELETE_ORG,
 } from '../constants/actions';

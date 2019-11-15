@@ -1,9 +1,17 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addOrg } from './actions/orgz';
 
 function Organization({ orgData, saveOrg }) {
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleClick = () => {
+    setIsClicked(true);
+
+    saveOrg(orgData);
+  };
+
   return (
     <div className="orgWrapper">
       <div className="orgName">
@@ -22,7 +30,22 @@ function Organization({ orgData, saveOrg }) {
           <span>ОГРН {orgData.data.ogrn}</span>
         </div>
       </div>
-      <button type="button" className="saveButton" onClick={() => saveOrg(orgData)}>Сохранить</button>
+      {isClicked
+        ? (
+          <div className="clickedButton">
+            <div className="clickedImg" />
+            Сохранено
+          </div>
+        )
+        : (
+          <button
+            type="button"
+            className="saveButton"
+            onClick={handleClick}
+          >
+          Сохранить
+          </button>
+        )}
     </div>
   );
 }

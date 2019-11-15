@@ -131,10 +131,6 @@ main {
   }
 }
 
-// .suggestions-highlighting {
-//   background: chocolate;
-// }
-
 .suggestions-suggestions {
   border: 1px solid #e5e5e5;
   border-radius: 0px 0px 3px 3px;
@@ -225,6 +221,23 @@ main {
     &:hover {
       cursor: pointer;
       background: #971932f5;
+    }
+  }
+  .clickedButton {
+    display: inline-flex;
+    align-items: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 34px;
+    color: #b9b9b9;
+    width: 150px;
+    height: 34px;
+    .clickedImg {
+      background: url(../img/doneIcon.svg);
+      width: 16px;
+      height: 13px;
+      margin-right: 8px;
     }
   }
 }
