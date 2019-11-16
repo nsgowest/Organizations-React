@@ -5,10 +5,10 @@ import { deleteOrg } from './actions/orgz';
 import Org from './Org';
 
 function SavedOrganizations({ orgzArr, canShowList }) {
-console.log("ea", orgzArr)
+
   return (
     <ul className="savedWrapper">
-      {canShowList && (orgzArr.map(({ value, data }) => <Org name={value} data={data} />))}
+      {canShowList && (orgzArr.map(({ value, data }) => <Org key={value} name={value} data={data} />))}
     </ul>
   );
 }

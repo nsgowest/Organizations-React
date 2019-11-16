@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DadataSuggestions from 'react-dadata-suggestions';
-import { addOrg } from './actions/orgz';
+import { addOrg, cantAdd } from './actions/orgz';
 import Organization from './Organization';
 
 import 'react-dadata-suggestions/dist/styles.css';
@@ -18,6 +18,7 @@ class SearchTab extends Component {
   }
 
   handleSelect = (suggestion) => {
+    this.props.isClicked()
     this.setState({
       suggestion,
     })
@@ -57,6 +58,7 @@ class SearchTab extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     saveOrg: (suggestion) => dispatch(addOrg(suggestion)),
+    isClicked: () => dispatch(cantAdd()),
   }
 }
 

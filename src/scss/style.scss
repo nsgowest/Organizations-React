@@ -242,7 +242,62 @@ main {
   }
 }
 
-.savedWrapper {
-  height: 200px;
-  background: blanchedalmond;
+.listItem {
+  width: 688px;
+  height: 80px;
+  border: 1px solid #dfdfdf;
+  border-radius: 3px;
+  padding: 15px;
+  margin-bottom: 20px;
+  .deleteIcon {
+    background: url(../img/deleteIcon.svg);
+    width: 15px;
+    height: 18px;
+    border: none;
+    outline: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    span {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 20px;
+      color: #2b2829;
+    }
+  }
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 15px;
+      color: #777777;
+      span {
+        margin-right: 15px;
+      }
+    }
+    .extendButton {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 19px;
+      text-decoration-line: underline;
+      color: #777777;
+      border: none;
+      outline: none;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
 }
