@@ -1,11 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
-import { deleteOrg } from './actions/orgz';
 import Org from './Org';
 
 function SavedOrganizations({ orgzArr, canShowList }) {
-
   return (
     <ul>
       {canShowList && (orgzArr.map(({ value, data }, i) => <Org key={i} index={i} name={value} data={data} />))}

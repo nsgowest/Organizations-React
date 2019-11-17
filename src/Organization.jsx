@@ -25,9 +25,18 @@ function Organization({ orgData, saveOrg, isBtnClicked, clickBtn }) {
           <span>{manager}</span>
         </div>
         <div className="numbers">
-          <span><span>ИНН</span> {orgData.data.inn}</span>
-          <span><span>КПП</span> {orgData.data.kpp}</span>
-          <span><span>ОГРН</span> {orgData.data.ogrn}</span>
+          <span>
+            <span>ИНН</span>
+            {orgData.data.inn}
+          </span>
+          <span>
+            <span>КПП</span>
+            {orgData.data.kpp}
+          </span>
+          <span>
+            <span>ОГРН</span>
+            {orgData.data.ogrn}
+          </span>
         </div>
       </div>
       {isBtnClicked
