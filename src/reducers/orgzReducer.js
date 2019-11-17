@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import {
-  CAN_ADD,
+  BTN_CLICKED,
   ADD_ORG,
   DELETE_ORG,
 } from '../constants/actions';
@@ -9,6 +9,7 @@ const initialState = {
   orgz: [],
   canShowList: false,
   canAdd: true,
+  isBtnClicked: false,
 };
 
 export function orgzReducer(state = initialState, action) {
@@ -18,13 +19,13 @@ export function orgzReducer(state = initialState, action) {
         ...state,
         orgz: [...state.orgz, action.payload.orgz].flat(),
         canShowList: action.payload.canShowList,
-        canAdd: action.payload.canAdd,
+        isBtnClicked: state.isBtnClicked,
       };
 
-    case CAN_ADD:
+    case BTN_CLICKED:
       return {
         ...state,
-        canAdd: action.payload.canAdd,
+        isBtnClicked: action.payload.isBtnClicked,
       };
 
     case DELETE_ORG:

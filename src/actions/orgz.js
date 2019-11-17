@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import {
-  CAN_ADD,
+  BTN_CLICKED,
   ADD_ORG,
   DELETE_ORG,
 } from '../constants/actions';
@@ -11,11 +11,11 @@ export const deleteOrg = () => (
   }
 );
 
-export const cantAdd = () => (
+export const handleSaveBtn = () => (
   {
-    type: ADD_ORG,
+    type: BTN_CLICKED,
     payload: {
-      canAdd: false,
+      isBtnClicked: false,
     },
   }
 );

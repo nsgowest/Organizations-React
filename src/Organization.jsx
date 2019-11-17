@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { addOrg, cantAdd } from './actions/orgz';
+import { addOrg, handleSaveBtn } from './actions/orgz';
 
-function Organization({ orgData, saveOrg, canAdd, isClicked }) {
+function Organization({ orgData, saveOrg, isBtnClicked, clickBtn }) {
   const handleClick = () => {
-    isClicked();
+    clickBtn();
     saveOrg(orgData);
   };
 
@@ -27,7 +27,7 @@ function Organization({ orgData, saveOrg, canAdd, isClicked }) {
           <span>ОГРН {orgData.data.ogrn}</span>
         </div>
       </div>
-      {canAdd
+      {isBtnClicked
         ? (
           <div className="clickedButton">
             <div className="clickedImg" />
@@ -49,14 +49,14 @@ function Organization({ orgData, saveOrg, canAdd, isClicked }) {
 
 const mapStateToProps = (state) => (
   {
-    canAdd: state.savedOrgz.canAdd,
+    isBtnClicked: state.savedOrgz.isBtnClicked,
   }
 );
 
 const mapDispatchToProps = (dispatch) => (
   {
     saveOrg: (suggestion) => dispatch(addOrg(suggestion)),
-    isClicked: () => dispatch(cantAdd()),
+    clickBtn: () => dispatch(handleSaveBtn()),
   }
 );
 
