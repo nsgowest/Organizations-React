@@ -11,11 +11,11 @@ export const deleteOrg = () => (
   }
 );
 
-export const handleSaveBtn = () => (
+export const handleSaveBtn = (click) => (
   {
     type: BTN_CLICKED,
     payload: {
-      isBtnClicked: false,
+      isBtnClicked: click,
     },
   }
 );

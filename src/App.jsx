@@ -1,8 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import SearchTab from './SearchTab';
 import SavedOrganizations from './SavedOrganizations';
 
-function App() {
+function App({ orgzLength }) {
   return (
     <div className="appWrapper">
       <header>
@@ -17,7 +18,7 @@ function App() {
           <label htmlFor="tab1">Новая организация</label>
 
           <input id="tab2" type="radio" name="tabs" />
-          <label htmlFor="tab2">Сохраненные организации</label>
+          <label htmlFor="tab2">Сохраненные организации ({orgzLength})</label>
 
           <div id="content-tab1">
             <SearchTab />
@@ -32,4 +33,11 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  const { length } = state.savedOrgz.orgz;
+  return {
+    orgzLength: length,
+  };
+};
+
+export default connect(mapStateToProps, null)(App);

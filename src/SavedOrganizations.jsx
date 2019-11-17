@@ -7,7 +7,7 @@ import Org from './Org';
 function SavedOrganizations({ orgzArr, canShowList }) {
 
   return (
-    <ul className="savedWrapper">
+    <ul>
       {canShowList && (orgzArr.map(({ value, data }) => <Org key={value} name={value} data={data} />))}
     </ul>
   );

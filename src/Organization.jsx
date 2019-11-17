@@ -5,7 +5,7 @@ import { addOrg, handleSaveBtn } from './actions/orgz';
 
 function Organization({ orgData, saveOrg, isBtnClicked, clickBtn }) {
   const handleClick = () => {
-    clickBtn();
+    clickBtn(true);
     saveOrg(orgData);
   };
 
@@ -56,7 +56,7 @@ const mapStateToProps = (state) => (
 const mapDispatchToProps = (dispatch) => (
   {
     saveOrg: (suggestion) => dispatch(addOrg(suggestion)),
-    clickBtn: () => dispatch(handleSaveBtn()),
+    clickBtn: (click) => dispatch(handleSaveBtn(click)),
   }
 );
 

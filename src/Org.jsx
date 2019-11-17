@@ -22,11 +22,19 @@ function Org({ name, data }) {
     extendButton.current.style.display = 'inline';
   };
 
+  const deleteOrg = () => {
+    
+  }
+
   return (
     <li className="listItem">
       <div className="title">
         <span>{name}</span>
-        <button type="button" className="deleteButton" />
+        <button
+          type="button"
+          className="deleteButton"
+          onClick={deleteOrg}
+        />
       </div>
       <div className="info">
         <div className="innWrapper">

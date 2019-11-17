@@ -73,7 +73,7 @@ main {
   > div {
     display: none;
     width: 736px;
-    height: 568px;
+    min-height: 568px;
     padding: 25px;
     padding-top: 32px;
     background: #fff;
@@ -97,10 +97,14 @@ main {
     font-size: 14px;
     line-height: 26px;
     margin-top: 5px;
+    padding: 16px;
     &:focus {
       outline: none;
       border: 1px solid #fae29f;
       border-radius: 3px;
+    }
+    &::placeholder {
+      color: #B9B9B9;
     }
   }
   > p {
@@ -178,7 +182,7 @@ main {
     .numbers {
       display: inline-flex;
       flex-direction: column;
-      width: 208px;
+      min-width: 208px;
       height: 125px;
       background: #f8f8f8;
       border-radius: 3px;
@@ -191,10 +195,10 @@ main {
     .texts {
       display: inline-flex;
       flex-direction: column;
+      font-size: 14px;
       span.title {
         font-style: normal;
         font-weight: bold;
-        font-size: 14px;
         line-height: 26px;
         color: #2b2829;
         margin-bottom: 8px;
@@ -243,6 +247,7 @@ main {
 }
 
 .listItem {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 688px;
@@ -286,6 +291,7 @@ main {
       font-size: 12px;
       line-height: 15px;
       color: #2b2829;
+      margin-bottom: 6px;
       span {
         margin-right: 15px;
         color: #777777;
@@ -300,6 +306,8 @@ main {
       color: #777777;
       border: none;
       outline: none;
+      padding: 0;
+      background: none;
       &:hover {
         cursor: pointer;
       }
@@ -307,7 +315,13 @@ main {
   }
   .extendableList {
     display: none;
+    > span {
+      margin-bottom: 6px;
+    }
     .closeButton {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
       font-style: normal;
       font-weight: normal;
       font-size: 10px;
@@ -316,6 +330,8 @@ main {
       color: #777777;
       border: none;
       outline: none;
+      padding: 0;
+      background: none;
       &:hover {
         cursor: pointer;
       }

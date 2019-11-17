@@ -8,7 +8,6 @@ import {
 const initialState = {
   orgz: [],
   canShowList: false,
-  canAdd: true,
   isBtnClicked: false,
 };
 

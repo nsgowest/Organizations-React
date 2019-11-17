@@ -18,7 +18,7 @@ class SearchTab extends Component {
   }
 
   handleSelect = (suggestion) => {
-    this.props.isClicked()
+    this.props.isClicked(false)
     this.setState({
       suggestion,
     })
@@ -55,7 +55,7 @@ class SearchTab extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     saveOrg: (suggestion) => dispatch(addOrg(suggestion)),
-    isClicked: () => dispatch(handleSaveBtn()),
+    isClicked: (click) => dispatch(handleSaveBtn(click)),
   }
 }
 
