@@ -28,12 +28,9 @@ export function orgzReducer(state = initialState, action) {
       };
 
     case DELETE_ORG:
-      // const newOrgz = state.orgz.filter((org) => {
-
-      // })
       return {
         ...state,
-        orgz: [],
+        orgz: action.payload.orgz,
       };
 
     default:

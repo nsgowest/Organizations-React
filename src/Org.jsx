@@ -1,13 +1,14 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { connect } from 'react-redux';
+import { deleteOrg } from './actions/orgz';
 
-function Org({ name, data }) {
+function Org({ name, data, index, eraseOrg }) {
   const {
     inn, kpp, ogrn,
   } = data;
   const address = data.address.value;
-  const manager = data.management.name || 'Нет';
-
+  const manager = (data.management !== null) ? data.management.name : 'Нет';
   const extendButton = React.createRef();
   const closeButton = React.createRef();
   const extendableList = React.createRef();
@@ -22,9 +23,9 @@ function Org({ name, data }) {
     extendButton.current.style.display = 'inline';
   };
 
-  const deleteOrg = () => {
-    
-  }
+  const handleDeleteClick = () => {
+    eraseOrg(index);
+  };
 
   return (
     <li className="listItem">
@@ -33,7 +34,7 @@ function Org({ name, data }) {
         <button
           type="button"
           className="deleteButton"
-          onClick={deleteOrg}
+          onClick={handleDeleteClick}
         />
       </div>
       <div className="info">
@@ -82,4 +83,10 @@ function Org({ name, data }) {
   );
 }
 
-export default Org;
+const mapDispatchToProps = (dispatch) => (
+  {
+    eraseOrg: (index) => dispatch(deleteOrg(index)),
+  }
+);
+
+export default connect(null, mapDispatchToProps)(Org);

@@ -5,11 +5,16 @@ import {
   DELETE_ORG,
 } from '../constants/actions';
 
-export const deleteOrg = () => (
-  {
+export const deleteOrg = (index) => (dispatch, getState) => {
+  const { orgz } = getState().savedOrgz;
+  const newState = orgz.filter((org, i) => i !== index);
+  dispatch({
     type: DELETE_ORG,
-  }
-);
+    payload: {
+      orgz: newState,
+    },
+  });
+};
 
 export const handleSaveBtn = (click) => (
   {

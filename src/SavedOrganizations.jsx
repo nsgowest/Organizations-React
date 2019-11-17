@@ -8,7 +8,7 @@ function SavedOrganizations({ orgzArr, canShowList }) {
 
   return (
     <ul>
-      {canShowList && (orgzArr.map(({ value, data }) => <Org key={value} name={value} data={data} />))}
+      {canShowList && (orgzArr.map(({ value, data }, i) => <Org key={i} index={i} name={value} data={data} />))}
     </ul>
   );
 }
@@ -20,10 +20,4 @@ const mapStateToProps = (state) => (
   }
 );
 
-const mapDispatchToProps = (dispatch) => (
-  {
-    delete: () => dispatch(deleteOrg()),
-  }
-);
-
-export default connect(mapStateToProps, mapDispatchToProps)(SavedOrganizations);
+export default connect(mapStateToProps)(SavedOrganizations);

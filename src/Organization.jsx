@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import { addOrg, handleSaveBtn } from './actions/orgz';
 
 function Organization({ orgData, saveOrg, isBtnClicked, clickBtn }) {
+  const manager = (orgData.data.management !== null) ? orgData.data.management.name : 'Нет';
+  const address = orgData.data.address.value;
+
   const handleClick = () => {
     clickBtn(true);
     saveOrg(orgData);
@@ -17,14 +20,14 @@ function Organization({ orgData, saveOrg, isBtnClicked, clickBtn }) {
       <div className="infoWrapper">
         <div className="texts">
           <span className="title">Юридический адрес</span>
-          <span>{orgData.data.address.value}</span>
+          <span>{address}</span>
           <span className="title">Генеральный директор</span>
-          <span>{orgData.data.management.name}</span>
+          <span>{manager}</span>
         </div>
         <div className="numbers">
-          <span>ИНН {orgData.data.inn}</span>
-          <span>КПП {orgData.data.kpp}</span>
-          <span>ОГРН {orgData.data.ogrn}</span>
+          <span><span>ИНН</span> {orgData.data.inn}</span>
+          <span><span>КПП</span> {orgData.data.kpp}</span>
+          <span><span>ОГРН</span> {orgData.data.ogrn}</span>
         </div>
       </div>
       {isBtnClicked
