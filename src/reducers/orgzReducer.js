@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import {
   BTN_CLICKED,
   ADD_ORG,

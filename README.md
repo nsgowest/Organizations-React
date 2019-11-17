@@ -1,5 +1,7 @@
 ## `Тестовое задание на позицию Front-end разработчика.`
 
+## Приложение можно посмотреть [**здесь**](https://nsgowest.github.io/Organizations-React)
+
 Макет: https://www.figma.com/file/LU036et2R4lZiQFTtCgQyR/Frontend-Developer-_Test?node-id=0%3A1
 
 Требуется создать страничку, на которой будет реализован поиск и сохранение организации.
