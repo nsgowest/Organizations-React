@@ -141,6 +141,7 @@ main {
 }
 
 .suggestions-suggestion {
+  padding: 8px 24px;
   &:hover {
     background: #f8f8f8;
   }
@@ -153,6 +154,11 @@ main {
   font-size: 12px;
   line-height: 17px;
   color: #2b292a;
+  span {
+    span {
+      margin-right: 60px;
+    }
+  }
 }
 
 .suggestions-value {

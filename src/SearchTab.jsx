@@ -36,7 +36,7 @@ class SearchTab extends Component {
           highlighting={false}
           service="party"
           suggestionsFormatter={(suggestion) =>
-            `${suggestion.value} г. ${suggestion.data.address.data.city}`}
+            `${suggestion.value}`}
           selectedSuggestionFormatter={(suggestion) =>
             `${suggestion.data.name.full_with_opf} ИНН ${suggestion.data.inn} адрес ${suggestion.data.address.value}`
         }
