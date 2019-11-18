@@ -114,6 +114,8 @@ main {
 }
 
 .addWrapper {
+  position: absolute;
+  top: 109px;
   display: flex;
   width: 500px;
   height: 70px;
@@ -133,6 +135,11 @@ main {
     background: url(../img/addIcon.svg);
     margin-right: 32px;
   }
+}
+
+.suggestions-wrapper {
+  position: relative;
+  z-index: 9998;
 }
 
 .suggestions-suggestions {
@@ -170,6 +177,8 @@ main {
 }
 
 .orgWrapper {
+  position: absolute;
+  top: 109px;
   width: 688px;
   height: 300px;
   .orgName {
@@ -254,6 +263,10 @@ main {
       margin-right: 8px;
     }
   }
+}
+
+#content-tab1 {
+  position: relative;
 }
 
 .listItem {
